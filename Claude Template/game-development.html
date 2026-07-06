@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Development - Kieron</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --deep-bg: #0a0e13;
+            --surface: #141821;
+            --accent: #f5e6d3;
+            --accent-dim: #d4c5b4;
+            --text-main: #e8e6e3;
+            --text-dim: #a8a6a3;
+            --highlight: #ff6b35;
+            --secondary: #4ecdc4;
+        }
+        
+        html.light-theme {
+            --deep-bg: #f5f1e8;
+            --surface: #ede5d9;
+            --accent: #2c2c2c;
+            --accent-dim: #4a4a4a;
+            --text-main: #1a1a1a;
+            --text-dim: #666666;
+            --highlight: #ff6b35;
+            --secondary: #4ecdc4;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-bg': 'var(--deep-bg)',
+                        'surface': 'var(--surface)',
+                        'accent': 'var(--accent)',
+                        'accent-dim': 'var(--accent-dim)',
+                        'text-main': 'var(--text-main)',
+                        'text-dim': 'var(--text-dim)',
+                        'highlight': 'var(--highlight)',
+                        'secondary': 'var(--secondary)',
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['DM Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-deep-bg text-text-main font-body transition-colors duration-300">
+    <!-- Header Navigation -->
+    <header class="bg-deep-bg border-b border-accent/10 sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-8 md:px-16 py-6 flex items-center justify-between">
+            <a href="index.html" class="font-display text-2xl font-black text-accent hover:text-highlight transition-colors">←</a>
+            <h1 class="font-display text-3xl md:text-4xl font-black text-accent">Game Development</h1>
+            <button id="theme-toggle" class="px-4 py-2 rounded bg-highlight text-deep-bg font-semibold hover:opacity-80 transition-opacity" title="Toggle theme">🌙</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-highlight/10 to-secondary/10 px-8 md:px-16 py-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-8">
+                <div class="text-xs text-secondary uppercase tracking-[2px] font-bold mb-4">Creative Pursuits</div>
+                <h2 class="font-display text-5xl md:text-7xl font-black text-accent mb-6">🎮 Game Development</h2>
+                <p class="text-xl md:text-2xl text-text-dim max-w-3xl leading-relaxed">
+                    Experimenting with game engines and interactive storytelling. From mechanics design to 
+                    procedural generation, bringing ideas to playable experiences.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="bg-surface px-8 md:px-16 py-24">
+        <div class="max-w-7xl mx-auto">
+            <!-- Focus Areas -->
+            <div class="mb-24">
+                <h3 class="font-display text-4xl font-black text-accent mb-12">Focus Areas</h3>
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div class="p-8 border-2 border-accent/20 bg-deep-bg hover:border-highlight transition-colors duration-300">
+                        <h4 class="font-display text-2xl text-highlight mb-4">Mechanics Design</h4>
+                        <p class="text-text-dim leading-relaxed">
+                            Crafting engaging game mechanics that are fun to play and balanced to perfection. 
+                            Creating gameplay loops that keep players coming back for more.
+                        </p>
+                    </div>
+                    <div class="p-8 border-2 border-accent/20 bg-deep-bg hover:border-highlight transition-colors duration-300">
+                        <h4 class="font-display text-2xl text-highlight mb-4">Procedural Generation</h4>
+                        <p class="text-text-dim leading-relaxed">
+                            Using algorithms to create dynamic, randomized content. Building infinite worlds and 
+                            unique experiences through generative techniques.
+                        </p>
+                    </div>
+                    <div class="p-8 border-2 border-accent/20 bg-deep-bg hover:border-highlight transition-colors duration-300">
+                        <h4 class="font-display text-2xl text-highlight mb-4">Interactive Storytelling</h4>
+                        <p class="text-text-dim leading-relaxed">
+                            Weaving narratives that respond to player choices. Creating immersive worlds where 
+                            story and gameplay intertwine seamlessly.
+                        </p>
+                    </div>
+                    <div class="p-8 border-2 border-accent/20 bg-deep-bg hover:border-highlight transition-colors duration-300">
+                        <h4 class="font-display text-2xl text-highlight mb-4">Game Art & Animation</h4>
+                        <p class="text-text-dim leading-relaxed">
+                            Creating visual assets and smooth animations that bring games to life. 
+                            Blending art and technical prowess for stunning visuals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Engines & Tools -->
+            <div class="mb-24">
+                <h3 class="font-display text-4xl font-black text-accent mb-12">Game Engines & Tools</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-deep-bg p-8 border border-accent/10">
+                        <h4 class="font-display text-xl text-highlight mb-6">Engines</h4>
+                        <ul class="space-y-3 text-text-dim">
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Unity</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Unreal Engine</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Godot</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Custom Engines</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Web-based (Phaser)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-deep-bg p-8 border border-accent/10">
+                        <h4 class="font-display text-xl text-highlight mb-6">Programming</h4>
+                        <ul class="space-y-3 text-text-dim">
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> C#</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> C++</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Python</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> JavaScript</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> GDScript</li>
+                        </ul>
+                    </div>
+                    <div class="bg-deep-bg p-8 border border-accent/10">
+                        <h4 class="font-display text-xl text-highlight mb-6">Supporting Tools</h4>
+                        <ul class="space-y-3 text-text-dim">
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Blender</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Aseprite</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> FMOD/Wwise</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Git/Version Control</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Jira/Project Mgmt</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Projects -->
+            <div class="mb-24">
+                <h3 class="font-display text-4xl font-black text-accent mb-12">Game Projects</h3>
+                <div class="space-y-8">
+                    <div class="p-10 border-2 border-accent/20 bg-deep-bg hover:border-highlight transition-all duration-300">
+                        <h4 class="font-display text-2xl text-highlight mb-3">Game Title</h4>
+                        <p class="text-text-dim mb-4 leading-relaxed">
+                            Description of the game concept, gameplay mechanics, and what makes it unique. 
+                            Include information about development status and platforms.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-3 py-1 bg-highlight/20 text-highlight text-sm rounded">Unity</span>
+                            <span class="px-3 py-1 bg-highlight/20 text-highlight text-sm rounded">C#</span>
+                            <span class="px-3 py-1 bg-highlight/20 text-highlight text-sm rounded">PC/Mobile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Design Philosophy -->
+            <div class="mb-24 p-12 border-2 border-secondary/30 bg-deep-bg">
+                <h3 class="font-display text-3xl font-black text-highlight mb-6">Game Design Philosophy</h3>
+                <p class="text-text-dim leading-relaxed text-lg">
+                    I believe great games balance accessibility with depth, rewarding both casual players and hardcore enthusiasts. 
+                    Every design decision should serve the core experience, creating moments of joy, challenge, and discovery. 
+                    Whether it's a indie prototype or a larger project, I'm passionate about bringing creative visions to life.
+                </p>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center py-16">
+                <p class="text-lg text-text-dim mb-8">Interested in game development collaboration?</p>
+                <a href="index.html#contact" class="inline-block px-8 py-4 bg-highlight text-deep-bg font-semibold hover:bg-secondary transition-colors duration-300 rounded">
+                    Let's Create Together
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deep-bg border-t border-accent/10 px-8 md:px-16 py-8 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto text-center text-text-dim text-sm">
+            <p>© 2026 Kieron. Back to <a href="index.html" class="text-highlight hover:text-secondary transition-colors">home</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or default to 'dark'
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            html.classList.add('light-theme');
+            themeToggle.textContent = '☀️';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('light-theme');
+            const theme = html.classList.contains('light-theme') ? 'light' : 'dark';
+            localStorage.setItem('theme', theme);
+            themeToggle.textContent = theme === 'light' ? '☀️' : '🌙';
+        });
+    </script>
+</body>
+</html>

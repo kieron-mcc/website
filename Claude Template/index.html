@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - ML Researcher & Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --deep-bg: #0a0e13;
+            --surface: #141821;
+            --accent: #f5e6d3;
+            --accent-dim: #d4c5b4;
+            --text-main: #e8e6e3;
+            --text-dim: #a8a6a3;
+            --highlight: #ff6b35;
+            --secondary: #4ecdc4;
+        }
+        
+        html.light-theme {
+            --deep-bg: #f5f1e8;
+            --surface: #ede5d9;
+            --accent: #2c2c2c;
+            --accent-dim: #4a4a4a;
+            --text-main: #1a1a1a;
+            --text-dim: #666666;
+            --highlight: #ff6b35;
+            --secondary: #4ecdc4;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-bg': 'var(--deep-bg)',
+                        'surface': 'var(--surface)',
+                        'accent': 'var(--accent)',
+                        'accent-dim': 'var(--accent-dim)',
+                        'text-main': 'var(--text-main)',
+                        'text-dim': 'var(--text-dim)',
+                        'highlight': 'var(--highlight)',
+                        'secondary': 'var(--secondary)',
+                    },
+                    fontFamily: {
+                        'display': ['Lora', 'Playfair Display', 'serif'],
+                        'body': ['DM Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'drift': 'drift 20s ease-in-out infinite',
+                        'slideDown': 'slideDown 0.8s ease-out',
+                        'fadeInUp': 'fadeInUp 1s ease-out both',
+                    },
+                    keyframes: {
+                        drift: {
+                            '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
+                            '33%': { transform: 'translate(5%, 5%) rotate(3deg)' },
+                            '66%': { transform: 'translate(-5%, 3%) rotate(-3deg)' },
+                        },
+                        slideDown: {
+                            'from': { transform: 'translateY(-100%)', opacity: '0' },
+                            'to': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeInUp: {
+                            'from': { opacity: '0', transform: 'translateY(30px)' },
+                            'to': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-deep-bg text-text-main overflow-x-hidden font-body transition-colors duration-300">
+    <!-- Animated Background -->
+    <div class="fixed top-0 left-0 w-full h-full -z-10 opacity-40">
+        <div class="absolute -top-1/2 -left-1/2 w-[200%] h-[200%] animate-drift"
+             style="background: radial-gradient(circle at 20% 50%, rgba(78, 205, 196, 0.15) 0%, transparent 50%),
+                                 radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.15) 0%, transparent 50%);">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full px-16 py-8 flex justify-between items-center z-50 bg-deep-bg/80 backdrop-blur-lg border-b border-accent/10 animate-slideDown transition-colors duration-300">
+        <div class="font-display text-2xl font-black text-accent tracking-tight">Portfolio</div>
+        <ul class="hidden md:flex gap-12 items-center">
+            <li><a href="#work" class="text-text-dim font-medium text-sm hover:text-accent transition-colors duration-300 relative group">
+                Work
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-highlight group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+            <li><a href="#hobbies" class="text-text-dim font-medium text-sm hover:text-accent transition-colors duration-300 relative group">
+                Hobbies
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-highlight group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+            <li><a href="#blog" class="text-text-dim font-medium text-sm hover:text-accent transition-colors duration-300 relative group">
+                Blog
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-highlight group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+            <li><a href="#contact" class="text-text-dim font-medium text-sm hover:text-accent transition-colors duration-300 relative group">
+                Contact
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-highlight group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+            <li><button id="theme-toggle" class="px-4 py-2 rounded bg-highlight text-deep-bg font-semibold hover:opacity-80 transition-opacity" title="Toggle theme">🌙</button></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="w-full pt-24 pb-16 flex items-center justify-center">
+        <div class="w-full">
+            <img src="../Images/hero-image.jpg" alt="Liverpool Waterfront" class="w-full h-auto shadow-2xl animate-fadeInUp-1">
+            <div class="px-8 md:px-16 pt-12">
+                <div class="text-sm text-secondary uppercase tracking-[3px] font-bold mb-6 inline-block animate-fadeInUp-2">
+                    PhD Researcher & Developer
+                </div>
+            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-6 text-accent animate-fadeInUp-3">
+                Building the Future of Machine Learning
+            </h1>
+            <p class="text-xl md:text-3xl text-text-dim mb-10 max-w-3xl animate-fadeInUp-4">
+                Bridging academic research and real-world applications
+            </p>
+            <p class="text-lg text-text-dim leading-relaxed max-w-2xl mb-12 animate-fadeInUp-5">
+                Currently completing a PhD in Machine Learning with a focus on applications in Quantitative Finance. 
+                Passionate about pushing the boundaries of AI while exploring creative pursuits in app and game development.
+            </p>
+            <div class="flex flex-wrap gap-6 animate-fadeInUp-6">
+                <a href="#work" class="px-10 py-4 text-base font-semibold bg-highlight text-deep-bg border-2 border-highlight hover:bg-transparent hover:text-highlight transition-all duration-300 hover:-translate-y-0.5">
+                    View My Work
+                </a>
+                <a href="#contact" class="px-10 py-4 text-base font-semibold bg-transparent text-accent border-2 border-accent-dim hover:bg-accent hover:text-deep-bg transition-all duration-300 hover:-translate-y-0.5">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!--
+    <section id="career" class="px-8 md:px-16 py-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16 reveal">
+                <div class="text-xs text-secondary uppercase tracking-[2px] font-bold mb-4">My Journey</div>
+                <h2 class="font-display text-4xl md:text-6xl font-black text-accent mb-4">Career Timeline</h2>
+                <p class="text-lg md:text-xl text-text-dim max-w-2xl">
+                    Click on any point to see details about my roles and locations over time.
+                </p>
+            </div>
+
+            <div class="relative">
+                <\!-- Timeline Line --\>
+                <div class="absolute top-16 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-highlight to-accent hidden lg:block"></div>
+                <div class="absolute top-16 left-0 right-0 h-1 bg-accent/20 lg:hidden"></div>
+
+                <\!-- Timeline Circles --\>
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-0 relative z-10 mb-12">
+                    <\!-- Undergraduate --\>
+                    <div class="career-item cursor-pointer group" data-period="0">
+                        <div class="career-circle bg-surface border-3 border-secondary hover:border-secondary hover:shadow-lg hover:shadow-secondary/50 transition-all duration-300 w-16 h-16 rounded-full flex items-center justify-center font-display font-bold text-base text-secondary group-hover:scale-110 group-hover:bg-deep-bg">
+                            1
+                        </div>
+                        <div class="text-center mt-4">
+                            <h3 class="font-display text-base text-accent font-bold">Undergraduate</h3>
+                        </div>
+                    </div>
+
+                    <\!-- PhD --\>
+                    <div class="career-item cursor-pointer group" data-period="1">
+                        <div class="career-circle bg-surface border-3 border-highlight hover:border-highlight hover:shadow-lg hover:shadow-highlight/50 transition-all duration-300 w-16 h-16 rounded-full flex items-center justify-center font-display font-bold text-base text-highlight group-hover:scale-110 group-hover:bg-deep-bg">
+                            2
+                        </div>
+                        <div class="text-center mt-4">
+                            <h3 class="font-display text-base text-accent font-bold">PhD</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <\!-- Details Panel --\>
+                <div class="mt-16 p-8 bg-surface border border-accent/20 rounded-lg reveal">
+                    <div id="career-details" class="space-y-6">
+                        <div class="space-y-2">
+                            <div class="text-xs text-secondary uppercase tracking-[2px] font-bold">Role</div>
+                            <h3 class="font-display text-3xl text-accent" id="detail-role">Undergraduate Student</h3>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-2">
+                                <div class="text-xs text-secondary uppercase tracking-[2px] font-bold">Location</div>
+                                <p class="text-lg text-text-main" id="detail-location">University Name</p>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="text-xs text-secondary uppercase tracking-[2px] font-bold">Time Period</div>
+                                <p class="text-lg text-text-main" id="detail-period">2018 - 2022</p>
+                            </div>
+                        </div>
+                        <p class="text-text-dim text-lg leading-relaxed" id="detail-description">
+                            Update this with your undergraduate experience details.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- Work Section -->
+    <section id="work" class="px-8 md:px-16 py-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16 reveal">
+                <div class="text-xs text-secondary uppercase tracking-[2px] font-bold mb-4">What I Do</div>
+                <h2 class="font-display text-4xl md:text-6xl font-black text-accent mb-4">Research & Expertise</h2>
+                <p class="text-lg md:text-xl text-text-dim max-w-2xl">
+                    Specializing in machine learning research with applications in quantitative finance and algorithmic trading.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-surface border border-accent/10 p-12 transition-all duration-400 hover:-translate-y-1 hover:border-accent/30 group reveal relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-highlight to-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left"></div>
+                    <div class="text-4xl mb-6">🧠</div>
+                    <h3 class="font-display text-3xl font-bold text-accent mb-4">Machine Learning Research</h3>
+                    <p class="text-text-dim leading-relaxed mb-6">
+                        Currently working on PhD focusing on Gaussian Processes applied to manufacturing.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-2 bg-secondary/10 text-secondary text-sm font-medium border border-secondary/20">Deep Learning</span>
+                        <span class="px-4 py-2 bg-secondary/10 text-secondary text-sm font-medium border border-secondary/20">Neural Networks</span>
+                        <span class="px-4 py-2 bg-secondary/10 text-secondary text-sm font-medium border border-secondary/20">Research</span>
+                    </div>
+                </div>
+                <div class="bg-surface border border-accent/10 p-12 transition-all duration-400 hover:-translate-y-1 hover:border-accent/30 group reveal relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-highlight to-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left"></div>
+                    <div class="text-4xl mb-6">📈</div>
+                    <h3 class="font-display text-3xl font-bold text-accent mb-4">Quantitative Finance</h3>
+                    <p class="text-text-dim leading-relaxed mb-6">
+                        Applying machine learning techniques to financial markets, algorithmic trading strategies, 
+                        and risk modeling. Seeking opportunities to bring cutting-edge ML to the finance industry.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-2 bg-secondary/10 text-secondary text-sm font-medium border border-secondary/20">Quant Finance</span>
+                        <span class="px-4 py-2 bg-secondary/10 text-secondary text-sm font-medium border border-secondary/20">Trading</span>
+                        <span class="px-4 py-2 bg-secondary/10 text-secondary text-sm font-medium border border-secondary/20">Analytics</span>
+                    </div>
+                </div>
+                <div class="bg-surface border border-accent/10 p-12 transition-all duration-400 hover:-translate-y-1 hover:border-accent/30 group reveal relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-highlight to-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left"></div>
+                    <div class="text-4xl mb-6">💻</div>
+                    <h3 class="font-display text-3xl font-bold text-accent mb-4">Software Development</h3>
+                    <p class="text-text-dim leading-relaxed mb-6">
+                        Building robust, scalable systems for machine learning deployment. Experience with modern 
+                        tech stacks and cloud infrastructure for ML applications.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-2 bg-secondary/10 text-secondary text-sm font-medium border border-secondary/20">Python</span>
+                        <span class="px-4 py-2 bg-secondary/10 text-secondary text-sm font-medium border border-secondary/20">ML Ops</span>
+                        <span class="px-4 py-2 bg-secondary/10 text-secondary text-sm font-medium border border-secondary/20">Cloud</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="bg-surface px-8 md:px-16 py-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16 reveal">
+                <div class="text-xs text-secondary uppercase tracking-[2px] font-bold mb-4">Beyond Research</div>
+                <h2 class="font-display text-4xl md:text-6xl font-black text-accent mb-4">Creative Pursuits</h2>
+                <p class="text-lg md:text-xl text-text-dim max-w-2xl">
+                    When I'm not deep in research, I explore various creative and technical hobbies.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <a href="app-development.html" class="relative p-10 border-2 border-accent/10 bg-deep-bg transition-all duration-400 hover:border-highlight hover:scale-105 group reveal no-underline">
+                    <div class="absolute inset-0 bg-gradient-to-br from-highlight/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                    <h3 class="font-display text-2xl md:text-3xl text-accent mb-4 relative z-10">📱 App Development</h3>
+                    <p class="text-text-dim leading-relaxed relative z-10">
+                        Creating mobile and web applications that solve real problems. Exploring modern frameworks 
+                        and design patterns to build intuitive user experiences.
+                    </p>
+                </a>
+                <a href="game-development.html" class="relative p-10 border-2 border-accent/10 bg-deep-bg transition-all duration-400 hover:border-highlight hover:scale-105 group reveal no-underline">
+                    <div class="absolute inset-0 bg-gradient-to-br from-highlight/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                    <h3 class="font-display text-2xl md:text-3xl text-accent mb-4 relative z-10">🎮 Game Development</h3>
+                    <p class="text-text-dim leading-relaxed relative z-10">
+                        Experimenting with game engines and interactive storytelling. From mechanics design to 
+                        procedural generation, bringing ideas to playable experiences.
+                    </p>
+                </a>
+                <a href="writing-sharing.html" class="relative p-10 border-2 border-accent/10 bg-deep-bg transition-all duration-400 hover:border-highlight hover:scale-105 group reveal no-underline">
+                    <div class="absolute inset-0 bg-gradient-to-br from-highlight/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                    <h3 class="font-display text-2xl md:text-3xl text-accent mb-4 relative z-10">✍️ Writing & Sharing</h3>
+                    <p class="text-text-dim leading-relaxed relative z-10">
+                        Documenting my journey through blog posts and tutorials. Sharing insights on machine learning, 
+                        development tips, and lessons learned along the way.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="px-8 md:px-16 py-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16 reveal">
+                <div class="text-xs text-secondary uppercase tracking-[2px] font-bold mb-4">Latest Thoughts</div>
+                <h2 class="font-display text-4xl md:text-6xl font-black text-accent mb-4">Blog</h2>
+                <p class="text-lg md:text-xl text-text-dim max-w-2xl">
+                    Insights, tutorials, and reflections on machine learning, development, and more.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-surface overflow-hidden border border-accent/10 transition-all duration-400 hover:-translate-y-1 hover:border-accent cursor-pointer reveal">
+                    <div class="w-full h-48 bg-gradient-to-br from-secondary to-highlight relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-30" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;none&quot;/><path d=&quot;M0,50 Q25,30 50,50 T100,50&quot; stroke=&quot;rgba(255,255,255,0.1)&quot; fill=&quot;none&quot; stroke-width=&quot;2&quot;/></svg>');"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-xs text-secondary mb-2 uppercase tracking-wider">Coming Soon</div>
+                        <h3 class="font-display text-2xl text-accent mb-4 leading-tight">Deep Dive into Transformer Architectures</h3>
+                        <p class="text-text-dim leading-relaxed mb-6">
+                            Exploring the mechanisms that make transformers so powerful for sequence modeling and beyond...
+                        </p>
+                        <a href="#" class="text-highlight font-semibold text-sm inline-flex items-center gap-2 group">
+                            Read More 
+                            <span class="transition-all duration-300 group-hover:translate-x-2">→</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-surface overflow-hidden border border-accent/10 transition-all duration-400 hover:-translate-y-1 hover:border-accent cursor-pointer reveal">
+                    <div class="w-full h-48 bg-gradient-to-br from-secondary to-highlight relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-30" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;none&quot;/><path d=&quot;M0,50 Q25,30 50,50 T100,50&quot; stroke=&quot;rgba(255,255,255,0.1)&quot; fill=&quot;none&quot; stroke-width=&quot;2&quot;/></svg>');"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-xs text-secondary mb-2 uppercase tracking-wider">Coming Soon</div>
+                        <h3 class="font-display text-2xl text-accent mb-4 leading-tight">ML in Quantitative Finance: A Primer</h3>
+                        <p class="text-text-dim leading-relaxed mb-6">
+                            An introduction to applying machine learning techniques in financial markets and trading strategies...
+                        </p>
+                        <a href="#" class="text-highlight font-semibold text-sm inline-flex items-center gap-2 group">
+                            Read More 
+                            <span class="transition-all duration-300 group-hover:translate-x-2">→</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-surface overflow-hidden border border-accent/10 transition-all duration-400 hover:-translate-y-1 hover:border-accent cursor-pointer reveal">
+                    <div class="w-full h-48 bg-gradient-to-br from-secondary to-highlight relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-30" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;none&quot;/><path d=&quot;M0,50 Q25,30 50,50 T100,50&quot; stroke=&quot;rgba(255,255,255,0.1)&quot; fill=&quot;none&quot; stroke-width=&quot;2&quot;/></svg>');"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-xs text-secondary mb-2 uppercase tracking-wider">Coming Soon</div>
+                        <h3 class="font-display text-2xl text-accent mb-4 leading-tight">Building My First Indie Game</h3>
+                        <p class="text-text-dim leading-relaxed mb-6">
+                            Lessons learned from game development as a machine learning researcher. Challenges, wins, and everything in between...
+                        </p>
+                        <a href="#" class="text-highlight font-semibold text-sm inline-flex items-center gap-2 group">
+                            Read More 
+                            <span class="transition-all duration-300 group-hover:translate-x-2">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="text-center px-8 md:px-16 py-32">
+        <div class="max-w-4xl mx-auto reveal">
+            <h2 class="font-display text-4xl md:text-6xl lg:text-7xl text-accent mb-8">Let's Connect</h2>
+            <p class="text-lg md:text-xl text-text-dim mb-12 leading-relaxed">
+                Interested in collaborating on research, discussing opportunities in quantitative finance, 
+                or just want to chat about ML and development? I'd love to hear from you.
+            </p>
+            <div class="flex justify-center gap-8 mb-12">
+                <a href="mailto:your.email@example.com" class="text-text-dim text-2xl transition-all duration-300 hover:text-highlight hover:-translate-y-1 p-4 border border-accent/10 w-16 h-16 flex items-center justify-center hover:border-highlight" title="Email">✉</a>
+                <a href="https://linkedin.com" class="text-text-dim text-2xl transition-all duration-300 hover:text-highlight hover:-translate-y-1 p-4 border border-accent/10 w-16 h-16 flex items-center justify-center hover:border-highlight" title="LinkedIn">in</a>
+                <a href="https://github.com" class="text-text-dim text-2xl transition-all duration-300 hover:text-highlight hover:-translate-y-1 p-4 border border-accent/10 w-16 h-16 flex items-center justify-center hover:border-highlight" title="GitHub">{ }</a>
+            </div>
+            <a href="mailto:your.email@example.com" class="inline-block px-10 py-4 text-base font-semibold bg-highlight text-deep-bg border-2 border-highlight hover:bg-transparent hover:text-highlight transition-all duration-300 hover:-translate-y-0.5">
+                Send a Message
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="px-8 md:px-16 py-12 border-t border-accent/10 text-center text-text-dim transition-colors duration-300">
+        <p>&copy; 2024 Portfolio. Designed with purpose and passion.</p>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or default to 'dark'
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            html.classList.add('light-theme');
+            themeToggle.textContent = '☀️';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('light-theme');
+            const theme = html.classList.contains('light-theme') ? 'light' : 'dark';
+            localStorage.setItem('theme', theme);
+            themeToggle.textContent = theme === 'light' ? '☀️' : '🌙';
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

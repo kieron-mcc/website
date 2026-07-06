@@ -1,0 +1,41 @@
+/* TODO: Rewrite style sheets using BEM naming convention */
+
+@import "tailwindcss";
+
+html, body{
+  margin:0;
+  padding:0;
+} 
+
+.page {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+
+
+.track-section {
+  height: 100vh;
+  width: 100%;
+  padding: 2em;
+  box-sizing: border-box;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.track-section[data-color="red"] {
+  background: #e74c3c;
+}
+
+.track-section[data-color="blue"] {
+  background: #3498db;
+}
+

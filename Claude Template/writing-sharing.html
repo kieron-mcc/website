@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing & Sharing - Kieron</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --deep-bg: #0a0e13;
+            --surface: #141821;
+            --accent: #f5e6d3;
+            --accent-dim: #d4c5b4;
+            --text-main: #e8e6e3;
+            --text-dim: #a8a6a3;
+            --highlight: #ff6b35;
+            --secondary: #4ecdc4;
+        }
+        
+        html.light-theme {
+            --deep-bg: #f5f1e8;
+            --surface: #ede5d9;
+            --accent: #2c2c2c;
+            --accent-dim: #4a4a4a;
+            --text-main: #1a1a1a;
+            --text-dim: #666666;
+            --highlight: #ff6b35;
+            --secondary: #4ecdc4;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-bg': 'var(--deep-bg)',
+                        'surface': 'var(--surface)',
+                        'accent': 'var(--accent)',
+                        'accent-dim': 'var(--accent-dim)',
+                        'text-main': 'var(--text-main)',
+                        'text-dim': 'var(--text-dim)',
+                        'highlight': 'var(--highlight)',
+                        'secondary': 'var(--secondary)',
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['DM Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-deep-bg text-text-main font-body transition-colors duration-300">
+    <!-- Header Navigation -->
+    <header class="bg-deep-bg border-b border-accent/10 sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-8 md:px-16 py-6 flex items-center justify-between">
+            <a href="index.html" class="font-display text-2xl font-black text-accent hover:text-highlight transition-colors">←</a>
+            <h1 class="font-display text-3xl md:text-4xl font-black text-accent">Writing & Sharing</h1>
+            <button id="theme-toggle" class="px-4 py-2 rounded bg-highlight text-deep-bg font-semibold hover:opacity-80 transition-opacity" title="Toggle theme">🌙</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-highlight/10 to-secondary/10 px-8 md:px-16 py-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-8">
+                <div class="text-xs text-secondary uppercase tracking-[2px] font-bold mb-4">Creative Pursuits</div>
+                <h2 class="font-display text-5xl md:text-7xl font-black text-accent mb-6">✍️ Writing & Sharing</h2>
+                <p class="text-xl md:text-2xl text-text-dim max-w-3xl leading-relaxed">
+                    Documenting my journey through blog posts and tutorials. Sharing insights on machine learning, 
+                    development tips, and lessons learned along the way.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="bg-surface px-8 md:px-16 py-24">
+        <div class="max-w-7xl mx-auto">
+            <!-- Writing Focus Areas -->
+            <div class="mb-24">
+                <h3 class="font-display text-4xl font-black text-accent mb-12">Writing Focus</h3>
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div class="p-8 border-2 border-accent/20 bg-deep-bg hover:border-highlight transition-colors duration-300">
+                        <h4 class="font-display text-2xl text-highlight mb-4">Technical Tutorials</h4>
+                        <p class="text-text-dim leading-relaxed">
+                            Creating step-by-step guides for developers. Breaking down complex concepts into digestible, 
+                            practical lessons with code examples and best practices.
+                        </p>
+                    </div>
+                    <div class="p-8 border-2 border-accent/20 bg-deep-bg hover:border-highlight transition-colors duration-300">
+                        <h4 class="font-display text-2xl text-highlight mb-4">In-Depth Articles</h4>
+                        <p class="text-text-dim leading-relaxed">
+                            Exploring subjects deeply and thoroughly. Sharing research, analysis, and insights on 
+                            machine learning, development, and technology trends.
+                        </p>
+                    </div>
+                    <div class="p-8 border-2 border-accent/20 bg-deep-bg hover:border-highlight transition-colors duration-300">
+                        <h4 class="font-display text-2xl text-highlight mb-4">Personal Stories</h4>
+                        <p class="text-text-dim leading-relaxed">
+                            Sharing personal experiences and lessons learned. Documenting my journey, mistakes, and 
+                            growth in tech and creative pursuits.
+                        </p>
+                    </div>
+                    <div class="p-8 border-2 border-accent/20 bg-deep-bg hover:border-highlight transition-colors duration-300">
+                        <h4 class="font-display text-2xl text-highlight mb-4">Project Case Studies</h4>
+                        <p class="text-text-dim leading-relaxed">
+                            Deep dives into projects I've worked on. Sharing the process, challenges overcome, and 
+                            outcomes achieved from conception to launch.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Writing Topics -->
+            <div class="mb-24">
+                <h3 class="font-display text-4xl font-black text-accent mb-12">Featured Topics</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="p-6 bg-deep-bg border border-accent/10 hover:border-highlight transition-colors">
+                        <h4 class="text-highlight font-semibold mb-2">Machine Learning</h4>
+                        <p class="text-text-dim text-sm">Theory, applications, and practical ML insights</p>
+                    </div>
+                    <div class="p-6 bg-deep-bg border border-accent/10 hover:border-highlight transition-colors">
+                        <h4 class="text-highlight font-semibold mb-2">Web Development</h4>
+                        <p class="text-text-dim text-sm">Modern frameworks, best practices, and tutorials</p>
+                    </div>
+                    <div class="p-6 bg-deep-bg border border-accent/10 hover:border-highlight transition-colors">
+                        <h4 class="text-highlight font-semibold mb-2">Game Development</h4>
+                        <p class="text-text-dim text-sm">Game design, mechanics, and dev experiences</p>
+                    </div>
+                    <div class="p-6 bg-deep-bg border border-accent/10 hover:border-highlight transition-colors">
+                        <h4 class="text-highlight font-semibold mb-2">Career & Learning</h4>
+                        <p class="text-text-dim text-sm">Growth, productivity, and skill development</p>
+                    </div>
+                    <div class="p-6 bg-deep-bg border border-accent/10 hover:border-highlight transition-colors">
+                        <h4 class="text-highlight font-semibold mb-2">Software Architecture</h4>
+                        <p class="text-text-dim text-sm">System design, patterns, and scalability</p>
+                    </div>
+                    <div class="p-6 bg-deep-bg border border-accent/10 hover:border-highlight transition-colors">
+                        <h4 class="text-highlight font-semibold mb-2">Creative Coding</h4>
+                        <p class="text-text-dim text-sm">Generative art, animations, and experiments</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Articles -->
+            <div class="mb-24">
+                <h3 class="font-display text-4xl font-black text-accent mb-12">Recent Articles</h3>
+                <div class="space-y-8">
+                    <article class="p-10 border-2 border-accent/20 bg-deep-bg hover:border-highlight transition-all duration-300">
+                        <div class="text-xs text-secondary uppercase tracking-[2px] font-bold mb-3">Coming Soon</div>
+                        <h4 class="font-display text-2xl text-highlight mb-3">Article Title</h4>
+                        <p class="text-text-dim mb-4 leading-relaxed">
+                            Brief summary of the article content. This is where you can hook readers with an intriguing 
+                            preview of what they'll learn or discover in the full piece.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="space-x-3">
+                                <span class="inline-block px-3 py-1 bg-highlight/20 text-highlight text-sm rounded">Topic</span>
+                            </div>
+                            <a href="#" class="text-highlight font-semibold hover:text-secondary transition-colors">Read More →</a>
+                        </div>
+                    </article>
+
+                    <article class="p-10 border-2 border-accent/20 bg-deep-bg hover:border-highlight transition-all duration-300">
+                        <div class="text-xs text-secondary uppercase tracking-[2px] font-bold mb-3">Coming Soon</div>
+                        <h4 class="font-display text-2xl text-highlight mb-3">Article Title</h4>
+                        <p class="text-text-dim mb-4 leading-relaxed">
+                            Brief summary of the article content. This is where you can hook readers with an intriguing 
+                            preview of what they'll learn or discover in the full piece.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="space-x-3">
+                                <span class="inline-block px-3 py-1 bg-highlight/20 text-highlight text-sm rounded">Topic</span>
+                            </div>
+                            <a href="#" class="text-highlight font-semibold hover:text-secondary transition-colors">Read More →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Writing Tips -->
+            <div class="mb-24 p-12 border-2 border-secondary/30 bg-deep-bg">
+                <h3 class="font-display text-3xl font-black text-highlight mb-6">Why I Write</h3>
+                <p class="text-text-dim leading-relaxed text-lg mb-6">
+                    Writing helps me solidify my understanding of complex topics and gives back to the community that's helped me grow. 
+                    I believe that knowledge shared is knowledge multiplied, and through writing, I can help others learn faster and avoid the mistakes I've made.
+                </p>
+                <p class="text-text-dim leading-relaxed text-lg">
+                    Every article, tutorial, and story is an opportunity to connect with fellow learners and builders, creating a shared knowledge base 
+                    that elevates us all.
+                </p>
+            </div>
+
+            <!-- Subscribe / Contact -->
+            <div class="text-center py-16">
+                <p class="text-lg text-text-dim mb-8">Subscribe for new articles and insights</p>
+                <div class="max-w-md mx-auto flex gap-3">
+                    <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 bg-deep-bg border border-accent/20 text-text rounded focus:outline-none focus:border-highlight transition-colors">
+                    <button class="px-8 py-3 bg-highlight text-deep-bg font-semibold hover:bg-secondary transition-colors duration-300 rounded">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deep-bg border-t border-accent/10 px-8 md:px-16 py-8 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto text-center text-text-dim text-sm">
+            <p>© 2026 Kieron. Back to <a href="index.html" class="text-highlight hover:text-secondary transition-colors">home</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or default to 'dark'
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            html.classList.add('light-theme');
+            themeToggle.textContent = '☀️';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('light-theme');
+            const theme = html.classList.contains('light-theme') ? 'light' : 'dark';
+            localStorage.setItem('theme', theme);
+            themeToggle.textContent = theme === 'light' ? '☀️' : '🌙';
+        });
+    </script>
+</body>
+</html>

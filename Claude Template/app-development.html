@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Development - Kieron</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --deep-bg: #0a0e13;
+            --surface: #141821;
+            --accent: #f5e6d3;
+            --accent-dim: #d4c5b4;
+            --text-main: #e8e6e3;
+            --text-dim: #a8a6a3;
+            --highlight: #ff6b35;
+            --secondary: #4ecdc4;
+        }
+        
+        html.light-theme {
+            --deep-bg: #f5f1e8;
+            --surface: #ede5d9;
+            --accent: #2c2c2c;
+            --accent-dim: #4a4a4a;
+            --text-main: #1a1a1a;
+            --text-dim: #666666;
+            --highlight: #ff6b35;
+            --secondary: #4ecdc4;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-bg': 'var(--deep-bg)',
+                        'surface': 'var(--surface)',
+                        'accent': 'var(--accent)',
+                        'accent-dim': 'var(--accent-dim)',
+                        'text-main': 'var(--text-main)',
+                        'text-dim': 'var(--text-dim)',
+                        'highlight': 'var(--highlight)',
+                        'secondary': 'var(--secondary)',
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['DM Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-deep-bg text-text-main font-body transition-colors duration-300">
+    <!-- Header Navigation -->
+    <header class="bg-deep-bg border-b border-accent/10 sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-8 md:px-16 py-6 flex items-center justify-between">
+            <a href="index.html" class="font-display text-2xl font-black text-accent hover:text-highlight transition-colors">←</a>
+            <h1 class="font-display text-3xl md:text-4xl font-black text-accent">App Development</h1>
+            <button id="theme-toggle" class="px-4 py-2 rounded bg-highlight text-deep-bg font-semibold hover:opacity-80 transition-opacity" title="Toggle theme">🌙</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-highlight/10 to-secondary/10 px-8 md:px-16 py-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-8">
+                <div class="text-xs text-secondary uppercase tracking-[2px] font-bold mb-4">Creative Pursuits</div>
+                <h2 class="font-display text-5xl md:text-7xl font-black text-accent mb-6">📱 App Development</h2>
+                <p class="text-xl md:text-2xl text-text-dim max-w-3xl leading-relaxed">
+                    Creating mobile and web applications that solve real problems. Exploring modern frameworks 
+                    and design patterns to build intuitive user experiences.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="bg-surface px-8 md:px-16 py-24">
+        <div class="max-w-7xl mx-auto">
+            <!-- Focus Areas -->
+            <div class="mb-24">
+                <h3 class="font-display text-4xl font-black text-accent mb-12">Focus Areas</h3>
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div class="p-8 border-2 border-accent/20 bg-deep-bg hover:border-highlight transition-colors duration-300">
+                        <h4 class="font-display text-2xl text-highlight mb-4">Web Development</h4>
+                        <p class="text-text-dim leading-relaxed">
+                            Building responsive and performant web applications using modern frameworks and technologies. 
+                            From React to Vue, crafting seamless user experiences across all devices.
+                        </p>
+                    </div>
+                    <div class="p-8 border-2 border-accent/20 bg-deep-bg hover:border-highlight transition-colors duration-300">
+                        <h4 class="font-display text-2xl text-highlight mb-4">Mobile Development</h4>
+                        <p class="text-text-dim leading-relaxed">
+                            Developing native and cross-platform mobile applications. Creating smooth, intuitive interfaces 
+                            that users love to interact with on iOS and Android.
+                        </p>
+                    </div>
+                    <div class="p-8 border-2 border-accent/20 bg-deep-bg hover:border-highlight transition-colors duration-300">
+                        <h4 class="font-display text-2xl text-highlight mb-4">UI/UX Design</h4>
+                        <p class="text-text-dim leading-relaxed">
+                            Designing thoughtful interfaces that balance aesthetics with functionality. Every pixel serves 
+                            a purpose in creating delightful user experiences.
+                        </p>
+                    </div>
+                    <div class="p-8 border-2 border-accent/20 bg-deep-bg hover:border-highlight transition-colors duration-300">
+                        <h4 class="font-display text-2xl text-highlight mb-4">Backend Architecture</h4>
+                        <p class="text-text-dim leading-relaxed">
+                            Building scalable and robust backend systems. Designing APIs, databases, and server architectures 
+                            that support exceptional frontend experiences.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technologies -->
+            <div class="mb-24">
+                <h3 class="font-display text-4xl font-black text-accent mb-12">Technologies & Tools</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-deep-bg p-8 border border-accent/10">
+                        <h4 class="font-display text-xl text-highlight mb-6">Frontend</h4>
+                        <ul class="space-y-3 text-text-dim">
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> React & Next.js</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Vue.js</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> TypeScript</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Tailwind CSS</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Responsive Design</li>
+                        </ul>
+                    </div>
+                    <div class="bg-deep-bg p-8 border border-accent/10">
+                        <h4 class="font-display text-xl text-highlight mb-6">Mobile</h4>
+                        <ul class="space-y-3 text-text-dim">
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> React Native</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Flutter</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Swift</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Kotlin</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Cross-platform</li>
+                        </ul>
+                    </div>
+                    <div class="bg-deep-bg p-8 border border-accent/10">
+                        <h4 class="font-display text-xl text-highlight mb-6">Backend</h4>
+                        <ul class="space-y-3 text-text-dim">
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Node.js</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Python/Django</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> PostgreSQL</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> Firebase</li>
+                            <li class="flex items-center gap-3"><span class="text-highlight">→</span> RESTful APIs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Projects -->
+            <div class="mb-24">
+                <h3 class="font-display text-4xl font-black text-accent mb-12">Recent Projects</h3>
+                <div class="space-y-8">
+                    <div class="p-10 border-2 border-accent/20 bg-deep-bg hover:border-highlight transition-all duration-300">
+                        <h4 class="font-display text-2xl text-highlight mb-3">Project Title</h4>
+                        <p class="text-text-dim mb-4 leading-relaxed">
+                            Brief description of the project, its goals, and the impact it had. Include the technologies used 
+                            and key achievements.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-3 py-1 bg-highlight/20 text-highlight text-sm rounded">React</span>
+                            <span class="px-3 py-1 bg-highlight/20 text-highlight text-sm rounded">Node.js</span>
+                            <span class="px-3 py-1 bg-highlight/20 text-highlight text-sm rounded">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center py-16">
+                <p class="text-lg text-text-dim mb-8">Want to collaborate on an app project?</p>
+                <a href="index.html#contact" class="inline-block px-8 py-4 bg-highlight text-deep-bg font-semibold hover:bg-secondary transition-colors duration-300 rounded">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deep-bg border-t border-accent/10 px-8 md:px-16 py-8 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto text-center text-text-dim text-sm">
+            <p>© 2026 Kieron. Back to <a href="index.html" class="text-highlight hover:text-secondary transition-colors">home</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or default to 'dark'
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            html.classList.add('light-theme');
+            themeToggle.textContent = '☀️';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('light-theme');
+            const theme = html.classList.contains('light-theme') ? 'light' : 'dark';
+            localStorage.setItem('theme', theme);
+            themeToggle.textContent = theme === 'light' ? '☀️' : '🌙';
+        });
+    </script>
+</body>
+</html>

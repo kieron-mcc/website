@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ############################################################################ -->
+<!--  &HEAD -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kieronmccallan.com</title>
+
+  <!-- ####################### -->
+  <!-- ~FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- ####################### -->
+  <!-- !STYLES -->
+  <link rel="stylesheet" href="STYLESHEETS/base.css" />
+  <link rel="stylesheet" href="STYLESHEETS/homepage.css" />
+  <link rel="stylesheet" href="STYLESHEETS/homepage_projects.css" />
+</head>
+
+<!-- ############################################################################ -->
+<!-- %BODY -->
+<body>
+  <div class="page">
+  <!-- £ PROGRESS BAR & NAV BULLETS -->
+  <div id="nav-bullets">
+    <a href="#section-1" data-label="Home" data-color="red">Home</a>
+    <a href="#section-2" data-label="Projects" data-color="green">Projects</a>
+    <a href="#section-3" data-label="Contact" data-color="blue">Contact</a>
+  </div>
+
+  <div id="progress"></div>
+  <div id="section-label"></div>
+
+<!-- ############################################################################ -->
+  <!-- *INTRO -->
+  
+  <!--
+  <div id="section-1" class="track-section" data-color="red">
+    <p>Image</p>
+  </div>
+  -->
+
+  <div class="hero">
+      <img src="./Images/temp_background.jpg" />
+      <p>
+        Hello.
+      </p>
+  </div>
+
+<!-- ############################################################################ -->
+  <!-- !PROJECTS -->
+
+  <div id="section-2" class="track-section" data-color="green" data-label="Projects">
+    <div class="project-section-content">
+      <div class="filters">
+        <div class="tabs">
+          <button class="tab active" data-topic="all">All</button>
+          <button class="tab" data-topic="A">A</button>
+          <button class="tab" data-topic="B">B</button>
+          <button class="tab" data-topic="C">C</button>
+          <button class="tab" data-topic="D">D</button>
+        </div>
+        <input type="text" id="search" placeholder="Search projects...">
+      </div>
+  
+      <div id="project-grid" class="grid"></div>
+    </div>
+  </div>
+  
+<!-- ############################################################################ -->
+  <!-- ~CONTACT -->
+  <div id="section-3" class="track-section" data-color="blue" data-label="Contact">
+  <p>Get in touch:</p>
+  </div>
+
+<!-- ############################################################################ -->
+ <!-- ~FOOTER~ -->
+<footer>
+    <p>Hi</p>
+
+</footer>
+
+<!-- ############################################################################ -->
+  <!-- *SCRIPTS -->
+  <script src="SCRIPTS/home_projects_script.js"></script>
+  <!-- <script src="SCRIPTS/scroll_progress.js"></script> -->
+  <!-- TODO: Change scroll colour bar to only appear on desktop/when display is vertically large enough -->
+</div>
+</body>
+
+</html>
